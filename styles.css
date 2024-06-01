@@ -1,0 +1,159 @@
+
+/* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  } */
+body {
+    font-family: 'Alata', sans-serif;
+    color: hsl(0, 0%, 55%);
+    margin: 0;
+    padding: 0px;
+  }
+  
+  h1, h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(0, 0%, 100%);
+  }
+  
+  header {
+    background: url('./images/desktop/image-hero.jpg') no-repeat center center/cover;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav li {
+    cursor: pointer;
+  }
+  
+  .hero-text {
+    margin-top: 4rem;
+    max-width: 400px;
+    margin-left: 2rem;
+    text-align: left;
+    font-size: 2rem;
+  }
+  
+  .hero-text h2 {
+    border: 2px solid hsl(0, 0%, 100%);
+    padding: 0.5rem;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .leader {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  
+  .leader img {
+    width: 60%;
+    height: auto;
+    position: relative;
+    left: 0%;
+    z-index: 1;
+  }
+  
+  .leader div {
+    max-width: 50%;
+    background: white;
+    padding: 2rem;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .leader h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(0, 0%, 0%);
+  }
+  
+  .creations {
+    text-align: center;
+  }
+  
+  .creations .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .creations h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(0, 0%, 0%);
+  }
+  
+  .creations .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .creations .card {
+    background: hsl(0, 0%, 41%);
+    color: hsl(0, 0%, 100%);
+    padding: 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    cursor: pointer;
+  }
+  
+  .creations .card:nth-child(1) { background-image: url('./images/desktop/image-deep-earth.jpg'); }
+  .creations .card:nth-child(2) { background-image: url('./images/desktop/image-night-arcade.jpg'); }
+  .creations .card:nth-child(3) { background-image: url('./images/desktop/image-soccer-team.jpg'); }
+  .creations .card:nth-child(4) { background-image: url('./images/desktop/image-grid.jpg'); }
+  .creations .card:nth-child(5) { background-image: url('./images/desktop/image-from-above.jpg'); }
+  .creations .card:nth-child(6) { background-image: url('./images/desktop/image-pocket-borealis.jpg'); }
+  .creations .card:nth-child(7) { background-image: url('./images/desktop/image-curiosity.jpg'); }
+  .creations .card:nth-child(8) { background-image: url('./images/desktop/image-the-fisheye.jpg'); }
+  
+  footer {
+    background: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  footer li {
+    cursor: pointer;
+  }
+  
