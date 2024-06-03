@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios JavaScript</title>
+    <style>
+        body {
+            font-family: 'Alata', sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #6a1b9a;
+        }
+        .card input, .card select, .card button {
+            width: calc(100% - 40px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #d1c4e9;
+            border-radius: 5px;
+        }
+        .card button {
+            background-color: #7e57c2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #5e35b1;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Card Año Bisiesto -->
+      <div class="card">
+        <h3>Calculadora de Año Bisiesto</h3>
+        <input type="number" id="year" placeholder="Ingresa un año" />
+        <button onclick="checkLeapYear()">Comprobar</button>
+        <p id="leapYearResult"></p>
+      </div>
+
+      <!-- Card Calculadora -->
+      <div class="card">
+        <h3>Calculadora</h3>
+        <select id="operation">
+          <option value="sumar">Sumar</option>
+          <option value="restar">Restar</option>
+          <option value="multiplicar">Multiplicar</option>
+          <option value="dividir">Dividir</option>
+          <option value="exponenciar">Exponenciación</option>
+          <option value="residuo">Residuo</option>
+        </select>
+        <input type="number" id="num1" placeholder="Número 1" />
+        <input type="number" id="num2" placeholder="Número 2" />
+        <button onclick="calculadora()">Calcular</button>
+        <p id="calcResult"></p>
+      </div>
+
+      <!-- Card Pedido -->
+      <div class="card">
+        <h3>Calculadora de Pedido</h3>
+        <select id="product">
+          <option value="refresco">Refresco (1.00 soles)</option>
+          <option value="cerveza">Cerveza (2.50 soles)</option>
+          <option value="papitas">Papitas (5.00 soles)</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Cantidad" />
+        <button onclick="calculateOrder()">Calcular Pedido</button>
+        <p id="orderResult"></p>
+      </div>
+    </div>
+
+    <script>
+      // Comprobar Año Bisiesto
+      function checkLeapYear() {
+        const year = parseInt(document.getElementById("year").value);
+        let result = "";
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+          result = `${year} es un año bisiesto.`;
+        } else {
+          result = `${year} no es un año bisiesto.`;
+        }
+        document.getElementById("leapYearResult").innerText = result;
+      }
+
+      // Calculadora
+      function calculadora() {
+        const operation = document.getElementById("operation").value;
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+        let result;
+
+        switch (operation) {
+          case "sumar":
+            result = x + y;
+            break;
+          case "restar":
+            result = x - y;
+            break;
+          case "multiplicar":
+            result = x * y;
+            break;
+          case "dividir":
+            if (y === 0) {
+              result = "Error: División por 0 no permitida";
+            } else {
+              result = x / y;
+            }
+            break;
+          case "exponenciar":
+            result = Math.pow(x, y);
+            break;
+          case "residuo":
+            result = x % y;
+            break;
+          default:
+            result = -1;
+        }
+
+        document.getElementById(
+          "calcResult"
+        ).innerText = `Resultado: ${result}`;
+      }
+
+      // Calculadora de Pedido
+      function calculateOrder() {
+        const product = document.getElementById("product").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        let price;
+
+        switch (product) {
+          case "refresco":
+            price = 1.0;
+            break;
+          case "cerveza":
+            price = 2.5;
+            break;
+          case "papitas":
+            price = 5.0;
+            break;
+          default:
+            price = 0;
+        }
+
+        const total = price * quantity;
+        document.getElementById(
+          "orderResult"
+        ).innerText = `Total a pagar: ${total.toFixed(2)} soles`;
+      }
+    </script>
+  </body>
+</html>
