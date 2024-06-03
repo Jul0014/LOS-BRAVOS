@@ -19,14 +19,14 @@
   <body>
     <header>
       <div class="header-content">
-        <h1>Loopstudios</h1>
+        <img class="logo-header" src="images/logo.svg" alt="Logo Loopstudios" />
         <nav>
           <ul>
-            <li>About</li>
-            <li>Careers</li>
-            <li>Events</li>
-            <li>Products</li>
-            <li>Support</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#support">Support</a></li>
           </ul>
         </nav>
       </div>
@@ -36,11 +36,17 @@
     </header>
 
     <main>
-      <section class="leader">
-        <img src="images/desktop/image-interactive.jpg" alt="VR Guy" />
-        <div>
-          <h2>The leader in interactive VR</h2>
-          <p>
+      <section id="about" class="leader">
+        <img
+          class="vr_guy_interactive"
+          src="images/desktop/image-interactive.jpg"
+          alt="VR Guy"
+        />
+        <div class="text_interactive move-left">
+          <h2 class="text_interactive_subtitle">
+            The leader in interactive VR
+          </h2>
+          <p class="text_interactive_paragraph">
             Founded in 2011, Loopstudios has been producing world-class virtual
             reality projects for some of the best companies around the globe.
             Our award-winning creations have transformed businesses through
@@ -50,38 +56,165 @@
       </section>
 
       <section class="creations">
-        <div class="title">
-          <h3>OUR CREATIONS</h3>
-          <button>See all</button>
+        <div class="creations_title">
+          <h2>OUR CREATIONS</h2>
+          <button class="creations_button">SEE ALL</button>
         </div>
-        <div class="grid">
-          <div class="card">Deep earth</div>
-          <div class="card">Night arcade</div>
-          <div class="card">Soccer team VR</div>
-          <div class="card">The grid</div>
-          <div class="card">From up above VR</div>
-          <div class="card">Pocket borealis</div>
-          <div class="card">The curiosity</div>
-          <div class="card">Make it fisheye</div>
+        <div class="creations_gallery">
+          <div
+            class="card"
+            style="background-image: url('images/desktop/image-deep-earth.jpg')"
+          >
+            Deep earth
+          </div>
+          <div
+            class="card"
+            style="
+              background-image: url('images/desktop/image-night-arcade.jpg');
+            "
+          >
+            Night arcade
+          </div>
+          <div
+            class="card"
+            style="
+              background-image: url('images/desktop/image-soccer-team.jpg');
+            "
+          >
+            Soccer team VR
+          </div>
+          <div
+            class="card"
+            style="background-image: url('images/desktop/image-grid.jpg')"
+          >
+            The grid
+          </div>
+          <div
+            class="card"
+            style="background-image: url('images/desktop/image-from-above.jpg')"
+          >
+            From up above VR
+          </div>
+          <div
+            class="card"
+            style="
+              background-image: url('images/desktop/image-pocket-borealis.jpg');
+            "
+          >
+            Pocket borealis
+          </div>
+          <div
+            class="card"
+            style="background-image: url('images/desktop/image-curiosity.jpg')"
+          >
+            The curiosity
+          </div>
+          <div
+            class="card"
+            style="background-image: url('images/desktop/image-fisheye.jpg')"
+          >
+            Make it fisheye
+          </div>
         </div>
+      </section>
+
+      <section class="contact">
+        <button class="open-modal_button" onclick="openModal()">
+          CONTÁCTANOS
+        </button>
       </section>
     </main>
 
     <footer>
-      <ul>
-        <li>About</li>
-        <li>Careers</li>
-        <li>Events</li>
-        <li>Products</li>
-        <li>Support</li>
-      </ul>
-      <p>©All rights reserved.</p>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Juliana Berrios</a>.
+      <img class="logo-footer" src="images/logo.svg" alt="Logo Loopstudios" />
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social_link" href="#" title="Facebook page"
+          ><img
+            class="footer-social_img"
+            src="images/icon-facebook.svg"
+            alt="Icon facebook"
+        /></a>
+        <a class="footer-social_link" href="#" title="Twitter page"
+          ><img
+            class="footer-social_img"
+            src="images/icon-twitter.svg"
+            alt="Icon twitter"
+        /></a>
+        <a class="footer-social_link" href="#" title="Pinterest page"
+          ><img
+            class="footer-social_img"
+            src="images/icon-pinterest.svg"
+            alt="Icon pinterest"
+        /></a>
+        <a class="footer-social_link" href="#" title="Instagram page"
+          ><img
+            class="footer-social_img"
+            src="images/icon-instagram.svg"
+            alt="Icon instagram"
+        /></a>
       </div>
+      <p>© Loopstudios. All rights reserved.</p>
     </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h2>Formulario de contacto</h2>
+        <form>
+          <label for="name">Nombre:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" /><br />
+          <label for="message">Descripción:</label><br />
+          <textarea id="message" name="message" rows="4"></textarea><br /><br />
+          <input type="submit" value="Enviar" class="form-button" />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const vrGuyImage = document.querySelector(".vr_guy_interactive");
+        const textInteractive = document.querySelector(".text_interactive");
+
+        function activateElements() {
+          vrGuyImage.classList.add("active");
+          textInteractive.classList.add("active");
+        }
+
+        activateElements();
+
+        const openModalButton = document.querySelector(".open-modal_button");
+        const closeModalButton = document.getElementById("closeModal");
+
+        openModalButton.addEventListener("click", openModal);
+        closeModalButton.addEventListener("click", closeModal);
+
+        function openModal() {
+          modalOverlay.style.display = "flex";
+          modal.classList.add("fade-in");
+        }
+
+        function closeModal() {
+          modalOverlay.style.display = "none";
+          modal.classList.remove("fade-in");
+        }
+
+        window.onclick = function (event) {
+          if (event.target == modalOverlay) {
+            closeModal();
+          }
+        };
+      };
+    </script>
   </body>
 </html>
