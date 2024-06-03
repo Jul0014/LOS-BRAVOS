@@ -15,7 +15,7 @@ function handleSubmit(event) {
     const contraseña = document.getElementById("password").value;
 
     if (validarCredenciales(correo, contraseña)) {
-        window.location.href = "./index.html";
+        window.location.href = "../index.html";
     } else {
         document.getElementById("error-message").textContent = "Credenciales incorrectas. Por favor, intenta de nuevo.";
     }
